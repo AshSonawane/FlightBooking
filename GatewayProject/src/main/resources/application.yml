@@ -1,0 +1,15 @@
+server.port: 9000
+spring:
+
+  cloud:
+    gateway:
+      routes:
+      - id: Airport
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/hello/**
+      - id: Flight
+        uri: http://localhost:8083/
+        predicates:
+        - Path=/Ashish/**
+      
